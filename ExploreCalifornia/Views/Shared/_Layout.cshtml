@@ -1,4 +1,5 @@
-﻿<!DOCTYPE HTML>
+﻿@addTagHelper *, ExploreCalifornia
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -11,6 +12,8 @@
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 <link href="/css/main.css" rel="stylesheet" type="text/css" media="screen, projection">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="~/scripts/site.js"></script>
 </head>
 <body id="home" class="no-js">
 <div id="wrapper">
@@ -71,7 +74,8 @@
   </section>
     <aside id="secondaryContent">
         <div id="specials" class="callOut">
-            <h1>Monthly Specials</h1>
+          <vc:monthly-specials />
+            @{/*<h1>Monthly Specials</h1>
             <h2 class="top"><img src="/images/calm_bug.gif" alt="California Calm" width="75" height="75">California Calm</h2>
             <p>
                 Day Spa Package <br>
@@ -91,7 +95,8 @@
             <p>
                 Tapas &amp; Groves <br>
                 <a href="/tours/tour_detail_taste.htm">$150</a>
-            </p>
+            </p>*/
+            }
         </div>
         <div id="trivia" class="callOut">
             <h1>Did You Know?</h1>

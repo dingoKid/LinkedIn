@@ -1,32 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dingo\\source\\repos\\ExploreCalifornia\\ExploreCalifornia\\ExploreCalifornia.csproj": {}
+    "C:\\Denes\\c#\\GitHub\\LinkedIn\\ExploreCalifornia\\ExploreCalifornia.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dingo\\source\\repos\\ExploreCalifornia\\ExploreCalifornia\\ExploreCalifornia.csproj": {
+    "C:\\Denes\\c#\\GitHub\\LinkedIn\\ExploreCalifornia\\ExploreCalifornia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dingo\\source\\repos\\ExploreCalifornia\\ExploreCalifornia\\ExploreCalifornia.csproj",
+        "projectUniqueName": "C:\\Denes\\c#\\GitHub\\LinkedIn\\ExploreCalifornia\\ExploreCalifornia.csproj",
         "projectName": "ExploreCalifornia",
-        "projectPath": "C:\\Users\\dingo\\source\\repos\\ExploreCalifornia\\ExploreCalifornia\\ExploreCalifornia.csproj",
-        "packagesPath": "C:\\Users\\dingo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dingo\\source\\repos\\ExploreCalifornia\\ExploreCalifornia\\obj\\",
+        "projectPath": "C:\\Denes\\c#\\GitHub\\LinkedIn\\ExploreCalifornia\\ExploreCalifornia.csproj",
+        "packagesPath": "C:\\Users\\gyetvaid\\.nuget\\packages\\",
+        "outputPath": "C:\\Denes\\c#\\GitHub\\LinkedIn\\ExploreCalifornia\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dingo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\gyetvaid\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -38,7 +35,16 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -57,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
