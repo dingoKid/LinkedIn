@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace ExploreCalifornia
 {
@@ -35,9 +36,19 @@ namespace ExploreCalifornia
 
             services.AddDbContext<BlogDataContext>(options =>
             {
-                var connectionString = configuration.GetConnectionString("BlogDataContext");
+                var connectionString = configuration.GetConnectionString("Home");
                 options.UseSqlServer(connectionString);
             });
+
+            services.AddDbContext<IdentityDataContext>(options =>
+            {
+                var connectionString = configuration.GetConnectionString("IdentityDataContext");
+                options.UseSqlServer(connectionString);
+            });
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<IdentityDataContext>();
+
 
             services.AddMvc();            
         }
@@ -69,6 +80,9 @@ namespace ExploreCalifornia
             });*/
 
             app.UseRouting();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

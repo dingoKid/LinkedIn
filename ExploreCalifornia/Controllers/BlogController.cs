@@ -1,4 +1,5 @@
 ﻿using ExploreCalifornia.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ExploreCalifornia.Controllers
 {
-    [Route("blog")]
+    //[Route("blog")]
     public class BlogController : Controller
     {
         private readonly BlogDataContext _db;
@@ -17,7 +18,7 @@ namespace ExploreCalifornia.Controllers
             _db = db;
         }
 
-        [Route("")]
+        //[Route("")]
         public IActionResult Index(int page = 0)
         {
             var pageSize = 2;
@@ -44,7 +45,7 @@ namespace ExploreCalifornia.Controllers
             return View(posts);
         }
 
-        [Route("{year:int}/{month:range(1, 12)}/{key}")]
+        //[Route("{year:int}/{month:range(1, 12)}/{key}")]
         public IActionResult Post(int year, int month, string key)
         {
             var post = _db.Posts.FirstOrDefault(x => x.Key == key);
@@ -52,13 +53,20 @@ namespace ExploreCalifornia.Controllers
             return View(post);
         }
     
-        [HttpGet, Route("create")]
+        [Authorize]
+        [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            if (User.Identity.IsAuthenticated)
+            {
+                return View();
+            }
+
+            return RedirectToAction("Login", "Account");
         }
 
-        [HttpPost, Route("create")]
+        [Authorize]
+        [HttpPost]
         public IActionResult Create(Post post)
         {
             if(!ModelState.IsValid)

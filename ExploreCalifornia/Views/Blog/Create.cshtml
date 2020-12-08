@@ -1,5 +1,6 @@
 ﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
 @model ExploreCalifornia.Models.Post
+
 @{
     Layout = "_Layout";
 }
@@ -9,7 +10,7 @@
 <fieldset>
 
     <form asp-action="create" asp-controller="blog">
-        
+
         <div asp-validation-summary="ModelOnly" class="input-validation-error"></div>
 
         <p>
